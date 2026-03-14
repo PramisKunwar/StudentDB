@@ -34,12 +34,11 @@ int main()
         }
     }
 
-    printf("\n\tDETAILS:");
-    printf("\n\t===============\n");
+    printf("\n\t\tDETAILS:");
+    printf("\n\t=====================\n");
     printf("\tNAME\t\tADDRESS\t\n");
     for(i=0;i<n;i++)
     {
         printf("\t%s\t\t%s\n",s[i].name,s[i].add);
     }
-
 }
