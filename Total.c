@@ -1,6 +1,5 @@
-/* Program to input data for students then 
-display their info and find the total marks of each student
-*/
+// Program to input data for students then 
+// display their info and find the total marks of each student
 #include<stdio.h>
 struct student
 {
