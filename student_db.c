@@ -1,20 +1,49 @@
+// Terminal Student Database
+/*Features:
+Add student: id, name, age, marks
+Search student
+Update Student
+Delete student
+Save to file
+*/ 
+
 #include<stdio.h>
-struct detail
+#include<string.h>
+
+struct student_db
 {
+    int id,age;
+    float marks;
     char name[50];
-    int age;
-} s[10];
+}s[50];
 
 int main()
 {
-    printf("Enter name ");
-    scanf("%s",s[1].name);
+    char ans[10];
+    int i=0,j,n;
+    do {
+    printf("Enter student id ");
+    scanf("%d",&s[i].id);
+    printf("Enter student name ");
+    scanf("%s",s[i].name);
+    printf("Enter student age ");
+    scanf("%d",&s[i].age);
+    printf("Enter student marks ");
+    scanf("%f",&s[i].marks);
+    printf("\nDo you want to add records? (Y/N)\n");
+    scanf("%s",ans);
+    i=i+1; 
+    n=n+1;
+    } while (strcmp(ans, "y") == 0 || strcmp(ans, "Y") == 0);
 
-    printf("Enter your age ");
-    scanf("%d",&s[1].age);
-
-    printf("\nUserName\tAge\n");
-    printf("\n=====================\n");
-    printf("%s \t\t %d", s[1].name,s[1].age);
+    printf("\n\tSTUDENT DETAILS");
+    printf("\n=================================================\n");
+    printf("ID\t\tNAME\t\tAGE\t\tMARKS\n");
+    for(i=0;i<n;i++)
+    {
+    printf("%d\t\t%s\t\t%d\t\t%f\n",s[i].id,s[i].name,s[i].age,s[i].marks);
+    }
+    
+    return 0;
 }
 
