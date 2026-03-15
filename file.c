@@ -24,13 +24,25 @@ int main()
         printf("\nEnter student %d marks\t",i+1);
         scanf("%d",&s[i].marks); 
     }
+    FILE *ptr;
+    ptr = fopen("student.txt","w");
+    
+    for(i=0;i<n;i++)
+    {
+        fprintf(ptr,"%d\t\t%s\t\t%d\n",s[i].std_no,s[i].name,s[i].marks);
+    }
+    fclose(ptr);
 
+    ptr = fopen("student.txt","r");
     printf("\n\t\tSTUDENT DETAILS:");
     printf("\nSN\t\tNAME\t\tMARKS");
     printf("\n=====================================\n");
-
-    for(i=0;i<n;i++)
+    i=0;
+    while(fscanf(ptr,"%d %s %d",&s[i].std_no,s[i].name,&s[i].marks)!=EOF)
     {
         printf("%d\t\t%s\t\t%d\n",s[i].std_no,s[i].name,s[i].marks);
+        i=i+1;
     }
+    fclose(ptr);
+    return 0;
 }
