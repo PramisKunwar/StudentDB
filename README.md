@@ -17,6 +17,16 @@ This program allows users to manager student records through a CLI and stores th
 
 ---
 
+    ![StudentDB](/StudentDB.png)
+    ![StudentDB](/StudentDB2.png) 
+    ![StudentDB](/StudentDB3.png) 
+    ![StudentDB](/StudentDB4.png) 
+    ![StudentDB](/StudentDB5.png)  
+    ![StudentDB](/StudentDB5.0.png) 
+    ![StudentDB](/StudentDB6.png) 
+    ![StudentDB](/StudentDB7.png) 
+
+---
 ## How to run
 
 Prerequisites:
