@@ -16,11 +16,18 @@ This program allows users to manager student records through a CLI and stores th
 7. Modular multi-file C project structure.
 
 ---
-
-| ![StudentDB](/StudentDB.png) | ![StudentDB](/StudentDB2.png) | ![StudentDB](/StudentDB3.png) | ![StudentDB](/StudentDB4.png) |
-|------------------------------|-------------------------------|-------------------------------|-------------------------------|
-| ![StudentDB](/StudentDB5.png) | ![StudentDB](/StudentDB5.0.png) | ![StudentDB](/StudentDB6.png) | ![StudentDB](/StudentDB7.png) |
-
+<p align="center">
+  <img src="/StudentDB.png" width="250" height="180"/>
+  <img src="/StudentDB2.png" width="250" height="180"/>
+  <img src="/StudentDB3.png" width="250" height="180"/>
+  <img src="/StudentDB4.png" width="250" height="180"/>
+</p>
+<p align="center">
+  <img src="/StudentDB5.png" width="250" height="180"/>
+  <img src="/StudentDB5.0.png" width="250" height="180"/>
+  <img src="/StudentDB6.png" width="250" height="180"/>
+  <img src="/StudentDB7.png" width="250" height="180"/>
+</p>
 
 ---
 ## How to run
