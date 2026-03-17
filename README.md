@@ -48,5 +48,13 @@ gcc main.c add.c display.c search.c update.c delete.c -o student_db
  
 ---
 
+## Motivation
+The core motivation to make this project is Hack Club. I would like to acknowledge Hack Club for inspiring this project through the Terminal Craft initiative
+I would also like to acknowledge grade 12 computer science curriculum for the foundational concepts.
+
 ## Licence
-Made for hack club.
+Open source and feel free to use it for educational purposes.
+
+## Author
+Name: Pramis Kunwar 
+Grade: 12
