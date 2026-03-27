@@ -9,11 +9,9 @@ void addRecord()
     char input[MAX_INPUT];
     int valid;
 
-    // Open file to read the last ID
     fptr = fopen("student.txt", "r");
     if (fptr != NULL)
     {
-        // Find the highest ID
         while (fscanf(fptr, "%d %49s %d %f", &s.id, s.name, &s.age, &s.marks) == 4)
         {
             if (s.id > lastId)
@@ -22,7 +20,6 @@ void addRecord()
         fclose(fptr);
     }
 
-    // Open for appending
     fptr = fopen("student.txt", "a");
     if (fptr == NULL)
     {
@@ -32,20 +29,17 @@ void addRecord()
 
     do
     {
-        // Auto-assign next ID
         lastId++;
         s.id = lastId;
         printf("\n--- New Record (ID: %d) ---\n", s.id);
 
-        // Get name with input validation
         do
         {
             valid = 1;
             printf("Enter student name: ");
             fgets(input, MAX_INPUT, stdin);
-            input[strcspn(input, "\n")] = 0; // Remove newline
+            input[strcspn(input, "\n")] = 0; 
 
-            // Check if name contains only letters and spaces
             for (int i = 0; input[i] != '\0'; i++)
             {
                 if (!((input[i] >= 'a' && input[i] <= 'z') ||
@@ -67,7 +61,6 @@ void addRecord()
 
         strcpy(s.name, input);
 
-        // Get age with validation
         do
         {
             printf("Enter student age: ");
@@ -78,7 +71,6 @@ void addRecord()
                 printf("Error: Age must be between 1 and 120!\n");
         } while (s.age < 1 || s.age > 120);
 
-        // Get marks with validation
         do
         {
             printf("Enter student marks: ");
@@ -89,7 +81,6 @@ void addRecord()
                 printf("Error: Marks must be between 0 and 100!\n");
         } while (s.marks < 0 || s.marks > 100);
 
-        // Save to file
         fprintf(fptr, "%d %s %d %.2f\n", s.id, s.name, s.age, s.marks);
         printf("\nRecord added successfully! (ID: %d)\n", s.id);
 

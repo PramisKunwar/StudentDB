@@ -47,7 +47,6 @@ void updateRecord()
             printf("Current Marks: %.2f\n", s.marks);
             printf("--------------------------------\n");
 
-            // Get new name with validation
             do
             {
                 valid = 1;
@@ -76,7 +75,6 @@ void updateRecord()
 
             strcpy(s.name, input);
 
-            // Get new age with validation
             do
             {
                 printf("Enter new age: ");
@@ -87,7 +85,6 @@ void updateRecord()
                     printf("Error: Age must be between 1 and 120!\n");
             } while (s.age < 1 || s.age > 120);
 
-            // Get new marks with validation
             do
             {
                 printf("Enter new marks: ");

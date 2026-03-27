@@ -42,7 +42,7 @@ void deleteRecord()
             found = 1;
             printf("\nDeleting record with ID: %d\n", s.id);
             printf("Name: %s, Age: %d, Marks: %.2f\n", s.name, s.age, s.marks);
-            continue; // Skip writing this record
+            continue; 
         }
 
         fprintf(temp, "%d %s %d %.2f\n", s.id, s.name, s.age, s.marks);
