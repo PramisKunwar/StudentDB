@@ -4,12 +4,17 @@ A robust, terminal-based Student Database Management System written in C with im
 
 ---
 
+| ![StudentDB](/StudentDB-2.0.png) | ![StudentDB](/StudentDB-2.0-1.png) |
+|----------------------------------|------------------------------------|
+| ![StudentDB](/StudentDB-2.0-2.png) | ![StudentDB](/StudentDB-2.0-3.png) |
+
+---
 ##  What's New in v2.0
 
 - **Auto-incrementing IDs** — IDs are assigned automatically (1, 2, 3...), eliminating manual entry and ensuring uniqueness
 - **Enhanced Input Validation** — Validates names (letters and spaces only), age (1–120), and marks (0–100)
 - **Buffer Overflow Protection** — Replaced unsafe `scanf()` with secure `fgets()` for all inputs
-- **Names with Spaces** — Supports full names like "John Doe"
+- **Names with Spaces** — Supports full names like "Pramis Kunwar"
 - **Better Error Handling** — Comprehensive file operation checks with user-friendly messages
 - **Improved Formatting** — Clean, aligned table display with total record count
 - **Robust File Operations** — Proper temporary file management with cleanup on failures
