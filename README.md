@@ -94,7 +94,7 @@ Made for hack club (terminal-craft ysws)
 
 ## Author
 
-'''
+```
   _____                     _       _  __                                    
  |  __ \                   (_)     | |/ /                                    
  | |__) | __ __ _ _ __ ___  _ ___  | ' /_   _ _ ____      ____ _ _ __        
@@ -107,7 +107,7 @@ Made for hack club (terminal-craft ysws)
  | |__| | | | (_| | (_| |  __/  | |/ /_  \__ \ |_| |_| | (_| |  __/ | | | |_ 
   \_____|_|  \__,_|\__,_|\___|  |_|____| |___/\__|\__,_|\__,_|\___|_| |_|\__|
                                                                              
-'''                                                                  
+```                                                                 
 
 
 *Version 2.0 — More robust, more secure, still simple.*
