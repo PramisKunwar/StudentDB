@@ -1,60 +1,113 @@
-# Terminal Student Database
+# Terminal Student Database v2.0
 
-A simple terminal-based Student Database Management System written in C.
-
-This program allows users to manager student records through a CLI and stores the data in a file named "Student.txt".
+A robust, terminal-based Student Database Management System written in C with improved security, input validation, and automatic ID management.
 
 ---
 
-## Features:
-1. Add student records (ID,NAME,AGE,MARKS)
-2. Display all student records
-3. Search student by ID
-4. Update student info
-5. Delete student record
-6. Menu-driven terminal interface
-7. Modular multi-file C project structure.
+## ✨ What's New in v2.0
+
+- **Auto-incrementing IDs** — IDs are assigned automatically (1, 2, 3...), eliminating manual entry and ensuring uniqueness
+- **Enhanced Input Validation** — Validates names (letters and spaces only), age (1–120), and marks (0–100)
+- **Buffer Overflow Protection** — Replaced unsafe `scanf()` with secure `fgets()` for all inputs
+- **Names with Spaces** — Supports full names like "John Doe"
+- **Better Error Handling** — Comprehensive file operation checks with user-friendly messages
+- **Improved Formatting** — Clean, aligned table display with total record count
+- **Robust File Operations** — Proper temporary file management with cleanup on failures
 
 ---
 
-| ![StudentDB](/StudentDB.png) | ![StudentDB](/StudentDB2.png) |
-|------------------------------|-------------------------------|
-| ![StudentDB](/StudentDB3.png) | ![StudentDB](/StudentDB4.png) |
-| ![StudentDB](/StudentDB5.png) | ![StudentDB](/StudentDB5.0.png) |
-| ![StudentDB](/StudentDB6.png) | ![StudentDB](/StudentDB7.png) |
+## Features
+
+1. **Add Student Records** — Auto-assigns a unique ID, validates all inputs
+2. **Display All Records** — Formatted table with total record count
+3. **Search by ID** — Quick lookup of individual student records
+4. **Update Records** — Modify existing student info with validation
+5. **Delete Records** — Remove students from the database
+6. **Menu-Driven Interface** — Simple, intuitive command-line navigation
 
 ---
-## How to run
 
-Prerequisites:
+## Getting Started
+
+### Prerequisites
+
 - GCC (or any standard C compiler)
-- A terminal / command line
- 
-**1. Clone the repository**
+- Terminal / Command Line
+
+### Installation
+
 ```bash
+# Clone the repository
 git clone https://github.com/PramisKunwar/StudentDB
-cd student-database
-```
- 
-**2. Compile**
-```bash
+cd StudentDB
+
+# Compile
 gcc main.c add.c display.c search.c update.c delete.c -o student_db
-```
- 
-**3. Run**
-```bash
+
+# Run
 ./student_db
 ```
- 
+
 ---
 
-## Motivation
-The core motivation to make this project is Hack Club. I would like to acknowledge Hack Club for inspiring this project through the Terminal Craft initiative
-I would also like to acknowledge grade 12 computer science curriculum for the foundational concepts.
+## Project Structure
 
-## Licence
-Open source and feel free to use it for educational purposes.
+```
+StudentDB/
+├── student.h      
+├── main.c        
+├── add.c          
+├── display.c      
+├── search.c       
+├── update.c      
+├── delete.c       
+└── student.txt    # Data file (auto-created)
+```
+
+---
+
+## Input Validation
+
+| Field     | Rules                                        |
+|-----------|----------------------------------------------|
+| **ID**    | Auto-generated, unique, starts from 1        |
+| **Name**  | Letters and spaces only, max 49 characters   |
+| **Age**   | 1 to 120                                     |
+| **Marks** | 0 to 100 (decimals supported)                |
+
+---
+
+## Version History
+
+| Version | Notes |
+|---------|-------|
+| v2.0 | Auto-incrementing IDs, `fgets()` input handling, comprehensive validation, improved formatting |
+| v1.0 | Basic CRUD operations, manual ID entry, `scanf()` inputs |
+
+---
+
+## License
+
+Made for hack club (terminal-craft ysws)
+
+---
 
 ## Author
-Name: Pramis Kunwar 
-Grade: 12
+
+'''
+  _____                     _       _  __                                    
+ |  __ \                   (_)     | |/ /                                    
+ | |__) | __ __ _ _ __ ___  _ ___  | ' /_   _ _ ____      ____ _ _ __        
+ |  ___/ '__/ _` | '_ ` _ \| / __| |  <| | | | '_ \ \ /\ / / _` | '__|       
+ | |   | | | (_| | | | | | | \__ \ | . \ |_| | | | \ V  V / (_| | |          
+ |_|___|_|  \__,_|_| |_| |_|_|___/ |_|\_\__,_|_| |_|\_/\_/ \__,_|_|      _   
+  / ____|             | |      /_ |__ \      | |           | |          | |  
+ | |  __ _ __ __ _  __| | ___   | |  ) |  ___| |_ _   _  __| | ___ _ __ | |_ 
+ | | |_ | '__/ _` |/ _` |/ _ \  | | / /  / __| __| | | |/ _` |/ _ \ '_ \| __|
+ | |__| | | | (_| | (_| |  __/  | |/ /_  \__ \ |_| |_| | (_| |  __/ | | | |_ 
+  \_____|_|  \__,_|\__,_|\___|  |_|____| |___/\__|\__,_|\__,_|\___|_| |_|\__|
+                                                                             
+'''                                                                  
+
+
+*Version 2.0 — More robust, more secure, still simple.*
