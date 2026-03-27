@@ -5,28 +5,102 @@ void addRecord()
     FILE *fptr;
     struct student_db s;
     char ans;
+    int lastId = 0;
+    char input[MAX_INPUT];
+    int valid;
 
-    fptr = fopen("student.txt","a");
+    // Open file to read the last ID
+    fptr = fopen("student.txt", "r");
+    if (fptr != NULL)
+    {
+        // Find the highest ID
+        while (fscanf(fptr, "%d %49s %d %f", &s.id, s.name, &s.age, &s.marks) == 4)
+        {
+            if (s.id > lastId)
+                lastId = s.id;
+        }
+        fclose(fptr);
+    }
 
-    do{
-        printf("Enter student id: ");
-        scanf("%d",&s.id);
+    // Open for appending
+    fptr = fopen("student.txt", "a");
+    if (fptr == NULL)
+    {
+        printf("Error: Cannot open file!\n");
+        return;
+    }
 
-        printf("Enter student name: ");
-        scanf("%s",s.name);
+    do
+    {
+        // Auto-assign next ID
+        lastId++;
+        s.id = lastId;
+        printf("\n--- New Record (ID: %d) ---\n", s.id);
 
-        printf("Enter student age: ");
-        scanf("%d",&s.age);
+        // Get name with input validation
+        do
+        {
+            valid = 1;
+            printf("Enter student name: ");
+            fgets(input, MAX_INPUT, stdin);
+            input[strcspn(input, "\n")] = 0; // Remove newline
 
-        printf("Enter student marks: ");
-        scanf("%f",&s.marks);
+            // Check if name contains only letters and spaces
+            for (int i = 0; input[i] != '\0'; i++)
+            {
+                if (!((input[i] >= 'a' && input[i] <= 'z') ||
+                      (input[i] >= 'A' && input[i] <= 'Z') ||
+                      input[i] == ' '))
+                {
+                    valid = 0;
+                    printf("Error: Name should contain only letters and spaces!\n");
+                    break;
+                }
+            }
 
-        fprintf(fptr,"%d %s %d %f\n",s.id,s.name,s.age,s.marks);
+            if (strlen(input) == 0)
+            {
+                valid = 0;
+                printf("Error: Name cannot be empty!\n");
+            }
+        } while (!valid);
 
-        printf("Add another record? (Y/N): ");
-        scanf(" %c",&ans);
+        strcpy(s.name, input);
 
-    }while(ans=='y' || ans=='Y');
+        // Get age with validation
+        do
+        {
+            printf("Enter student age: ");
+            fgets(input, MAX_INPUT, stdin);
+            s.age = atoi(input);
+
+            if (s.age < 1 || s.age > 120)
+                printf("Error: Age must be between 1 and 120!\n");
+        } while (s.age < 1 || s.age > 120);
+
+        // Get marks with validation
+        do
+        {
+            printf("Enter student marks: ");
+            fgets(input, MAX_INPUT, stdin);
+            s.marks = atof(input);
+
+            if (s.marks < 0 || s.marks > 100)
+                printf("Error: Marks must be between 0 and 100!\n");
+        } while (s.marks < 0 || s.marks > 100);
+
+        // Save to file
+        fprintf(fptr, "%d %s %d %.2f\n", s.id, s.name, s.age, s.marks);
+        printf("\nRecord added successfully! (ID: %d)\n", s.id);
+
+        do
+        {
+            printf("Add another record? (Y/N): ");
+            fgets(input, MAX_INPUT, stdin);
+            ans = input[0];
+        } while (ans != 'y' && ans != 'Y' && ans != 'n' && ans != 'N');
+
+    } while (ans == 'y' || ans == 'Y');
 
     fclose(fptr);
 }
